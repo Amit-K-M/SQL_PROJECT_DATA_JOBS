@@ -99,3 +99,39 @@ Other skills like **R**, **Snowflake**, **Pandas**, and **Excel** show varying d
 
 ![Top Paying Skills](assets/skill_count_top_10.png)
 *Bar graph visualizing the count of skills for the top 10 paying jobs for data analysts; ChatGPT generated this graph from my SQL query results*
+
+### 3. In-Demand Skills for Data Analysts
+
+This query helped identify the skills most frequently requested in job postings, directing focus to areas with high demand.
+
+```sql
+SELECT
+    skills,
+    COUNT(job_postings_fact.job_id) as demand
+FROM
+    job_postings_fact
+INNER JOIN skills_job_dim ON skills_job_dim.job_id = job_postings_fact.job_id
+INNER JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
+WHERE
+    job_title_short = 'Data Analyst' AND
+    job_work_from_home = TRUE
+GROUP BY
+    skills
+ORDER BY 
+    demand DESC
+LIMIT 5;
+```
+Here's the breakdown of the most demanded skills for data analysts in 2023
+- **SQL** and **Excel** remain fundamental, emphasizing the need for strong foundational skills in data processing and spreadsheet manipulation.
+- **Programming** and **Visualization Tools** like **Python**, **Tableau**, and **Power BI** are essential, pointing towards the increasing importance of technical skills in data storytelling and decision support.
+
+| Skills   | Demand Count |
+|----------|--------------|
+| SQL      | 7291         |
+| Excel    | 4611         |
+| Python   | 4330         |
+| Tableau  | 3745         |
+| Power BI | 2609         |
+
+*Table of the demand for the top 5 skills in remote data analyst job postings*
+
