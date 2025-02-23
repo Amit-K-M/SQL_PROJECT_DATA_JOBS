@@ -2,6 +2,7 @@
 📊 Dive into the data job market! Focusing on data analyst roles, this project explores 💰 top-paying jobs, 🔥 in-demand skills, and 📈 where high demand meets high salary in data analytics.
 
 🔍 SQL queries? Check them out here: [Sql_project Folder](Sql_project)
+This is the SQL version of the project. [If you're interested in the ***Python version***, you can find it here](https://github.com/Amit-K-M/python_data_Science_project)
 
 # Background
 Driven by a quest to navigate the data analyst job market more effectively, this project was born from a desire to pinpoint top-paid and in-demand skills, streamlining others work to find optimal jobs.
